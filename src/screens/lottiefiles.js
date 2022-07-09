@@ -10,16 +10,15 @@ import {
 import LottieView from 'lottie-react-native';
 
 const config = {
-  1: require('../assets/lottie/eco.json'),
-  2: require('../assets/lottie/loader.json'),
-  3: require('../assets/lottie/switch.json'),
-  4: require('../assets/lottie/refresh.json'),
+  1: require('../assets/lottie/loader.json'),
+  2: require('../assets/lottie/switch.json'),
 };
 
 const LottieFiles = props => {
   const animation = React.useRef(null);
   const ifFirstRun = React.useRef(true);
   const [like, setLike] = useState(false);
+  const [show, setShow] = useState(false);
 
   React.useEffect(() => {
     if (ifFirstRun.current) {
@@ -38,6 +37,7 @@ const LottieFiles = props => {
       animation.current.play(0, 19);
     }
   }, [like]);
+  // 1: require('../assets/lottie/eco.json'),
   return (
     <ScrollView contentContainerStyle={styles.container}>
       <Text style={styles.text}>Ты любишь это ?</Text>
@@ -56,10 +56,18 @@ const LottieFiles = props => {
         большое количество анимаций тормозит прилагу
       </Text>
       {Object.entries(config).map(([key, val]) => (
-        <View key={key}>
-          <LottieView style={styles.icon} source={val} autoPlay />
-        </View>
+        <LottieView key={key} style={styles.icon} source={val} autoPlay />
       ))}
+      <TouchableOpacity onPress={() => setShow(prev => !prev)}>
+        <Text style={styles.text}>{`сложная анимаций\nнажми на текст`}</Text>
+      </TouchableOpacity>
+      {show && (
+        <LottieView
+          style={styles.icon}
+          source={require('../assets/lottie/eco.json')}
+          autoPlay
+        />
+      )}
     </ScrollView>
   );
 };
