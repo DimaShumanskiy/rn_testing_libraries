@@ -16,6 +16,12 @@ const Main = props => {
           onPress={() => props.navigation.navigate('BaseShadow')}
         />
       </View>
+      <View style={styles.containerNavigate}>
+        <Button
+          title="FadeIn"
+          onPress={() => props.navigation.navigate('FadeIn')}
+        />
+      </View>
     </View>
   );
 };
