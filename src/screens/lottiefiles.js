@@ -3,12 +3,18 @@ import {
   View,
   Text,
   StyleSheet,
-  Button,
   TouchableOpacity,
   ScrollView,
 } from 'react-native';
 
 import LottieView from 'lottie-react-native';
+
+const config = {
+  1: require('../assets/lottie/eco.json'),
+  2: require('../assets/lottie/loader.json'),
+  3: require('../assets/lottie/switch.json'),
+  4: require('../assets/lottie/refresh.json'),
+};
 
 const LottieFiles = props => {
   const animation = React.useRef(null);
@@ -46,34 +52,14 @@ const LottieFiles = props => {
           />
         </TouchableOpacity>
       </View>
-      <View>
-        <LottieView
-          style={styles.icon}
-          source={require('../assets/lottie/eco.json')}
-          autoPlay
-        />
-      </View>
-      <View>
-        <LottieView
-          style={styles.icon}
-          source={require('../assets/lottie/loader.json')}
-          autoPlay
-        />
-      </View>
-      <View>
-        <LottieView
-          style={styles.icon}
-          source={require('../assets/lottie/switch.json')}
-          autoPlay
-        />
-      </View>
-      <View>
-        <LottieView
-          style={styles.icon}
-          source={require('../assets/lottie/refresh.json')}
-          autoPlay
-        />
-      </View>
+      <Text style={styles.text}>
+        большое количество анимаций тормозит прилагу
+      </Text>
+      {Object.entries(config).map(([key, val]) => (
+        <View key={key}>
+          <LottieView style={styles.icon} source={val} autoPlay />
+        </View>
+      ))}
     </ScrollView>
   );
 };
