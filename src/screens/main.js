@@ -1,27 +1,25 @@
 import React from 'react';
 import {View, Text, StyleSheet, Button} from 'react-native';
 
+const config = [
+  'LottieFiles',
+  'BaseShadow',
+  'FadeIn',
+  'ReactNativePaper',
+  'Animation',
+];
+
 const Main = props => {
   return (
     <View style={styles.container}>
-      <View style={styles.containerNavigate}>
-        <Button
-          title="LottieFiles"
-          onPress={() => props.navigation.navigate('LottieFiles')}
-        />
-      </View>
-      <View style={styles.containerNavigate}>
-        <Button
-          title="BaseShadow"
-          onPress={() => props.navigation.navigate('BaseShadow')}
-        />
-      </View>
-      <View style={styles.containerNavigate}>
-        <Button
-          title="FadeIn"
-          onPress={() => props.navigation.navigate('FadeIn')}
-        />
-      </View>
+      {config.map((item, key) => (
+        <View key={`${key}_${item}`} style={styles.containerNavigate}>
+          <Button
+            title={item}
+            onPress={() => props.navigation.navigate(item)}
+          />
+        </View>
+      ))}
     </View>
   );
 };
