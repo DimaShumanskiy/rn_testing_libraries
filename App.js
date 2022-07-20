@@ -10,6 +10,8 @@ import BaseShadow from './src/screens/base-shadow';
 import FadeIn from './src/screens/fade-in';
 import ReactNativePaper from './src/screens/react-native-paper';
 import Animation from './src/screens/animation';
+import Modal from './src/screens/modal';
+import BottomSheets from './src/screens/bottom-sheet';
 
 const Stack = createNativeStackNavigator();
 
@@ -24,6 +26,8 @@ const App = () => {
           <Stack.Screen name="FadeIn" component={FadeIn} />
           <Stack.Screen name="ReactNativePaper" component={ReactNativePaper} />
           <Stack.Screen name="Animation" component={Animation} />
+          <Stack.Screen name="Modal" component={Modal} />
+          <Stack.Screen name="BottomSheets" component={BottomSheets} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

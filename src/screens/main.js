@@ -7,6 +7,8 @@ const config = [
   'FadeIn',
   'ReactNativePaper',
   'Animation',
+  'Modal',
+  'BottomSheets',
 ];
 
 const Main = props => {
