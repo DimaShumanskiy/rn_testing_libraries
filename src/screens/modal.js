@@ -26,6 +26,7 @@ const SPRING_CONFIG = {
 
 const Modal = props => {
   const dimensions = useWindowDimensions();
+
   const top = useSharedValue(dimensions.height);
   const style = useAnimatedStyle(() => {
     return {
@@ -64,6 +65,10 @@ const Modal = props => {
       </View>
       <PanGestureHandler onGestureEvent={gestureHandler}>
         <Animated.View
+          onLayout={event => {
+            var {height} = event.nativeEvent.layout;
+            console.log('height :>> ', height);
+          }}
           style={[
             {
               position: 'absolute',
