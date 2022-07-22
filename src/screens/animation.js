@@ -5,6 +5,7 @@ import {
   StyleSheet,
   Button,
   useWindowDimensions,
+  Dimensions,
 } from 'react-native';
 import {TouchableWithoutFeedback} from 'react-native-gesture-handler';
 import Animated, {
@@ -22,13 +23,17 @@ const SPRING_CONFIG = {
   restSpeedThreshold: 0.1,
   stiffness: 500,
 };
+
+const {height, width} = Dimensions.get('window');
+const screenHeight = height;
+
 const Animation = props => {
   const animation = useSharedValue(0);
-  const dimensions = useWindowDimensions();
+  // const dimensions = useWindowDimensions();
 
   const [value, setValue] = useState();
 
-  const top = useSharedValue(dimensions.height);
+  const top = useSharedValue(screenHeight);
   const style = useAnimatedStyle(() => {
     return {
       top: withTiming(top.value, {easing: Easing.linear, duration: 0}),
@@ -46,19 +51,19 @@ const Animation = props => {
   const onOff = () => {
     if (animation.value === 0.4) {
       animation.value = 0;
-      top.value = withSpring(dimensions.height, SPRING_CONFIG);
+      top.value = withSpring(screenHeight, SPRING_CONFIG);
     } else {
       animation.value = 0.4;
       top.value = withSpring(
         // 200,
         // value,
-        dimensions.height - value * 2,
+        // dimensions.height - value * 2,
+        screenHeight - value,
         // dimensions.height / 2,
         SPRING_CONFIG,
       );
     }
   };
-  console.log('value', value);
 
   return (
     <View>

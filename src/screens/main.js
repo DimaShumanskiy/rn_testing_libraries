@@ -9,6 +9,8 @@ const config = [
   'Animation',
   'Modal',
   'BottomSheets',
+  'AnimationWithSpring',
+  'Animation2',
 ];
 
 const Main = props => {
