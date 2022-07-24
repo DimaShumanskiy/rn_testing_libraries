@@ -11,6 +11,8 @@ const config = [
   'BottomSheets',
   'AnimationWithSpring',
   'Animation2',
+  'PanGestureHandler1',
+  'Introduction',
 ];
 
 const Main = props => {

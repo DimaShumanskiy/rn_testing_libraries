@@ -8,6 +8,8 @@ import Modal from './modal';
 import BottomSheets from './bottom-sheet';
 import AnimationWithSpring from './animation-with-spring';
 import Animation2 from './animation-2';
+import PanGestureHandler1 from './pan-gesture-handler-1';
+import Introduction from './introduction';
 
 export default {
   Main,
@@ -20,4 +22,6 @@ export default {
   BottomSheets,
   AnimationWithSpring,
   Animation2,
+  PanGestureHandler1,
+  Introduction,
 };

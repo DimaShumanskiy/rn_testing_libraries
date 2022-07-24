@@ -6,7 +6,6 @@ import {Provider as PaperProvider} from 'react-native-paper';
 import screen from './src/screens/';
 
 const Stack = createNativeStackNavigator();
-console.log('screen', screen);
 const App = () => {
   return (
     <PaperProvider>
@@ -28,6 +27,11 @@ const App = () => {
             component={screen.AnimationWithSpring}
           />
           <Stack.Screen name="Animation2" component={screen.Animation2} />
+          <Stack.Screen
+            name="PanGestureHandler1"
+            component={screen.PanGestureHandler1}
+          />
+          <Stack.Screen name="Introduction" component={screen.Introduction} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>
