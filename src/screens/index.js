@@ -10,6 +10,7 @@ import AnimationWithSpring from './animation-with-spring';
 import Animation2 from './animation-2';
 import PanGestureHandler1 from './pan-gesture-handler-1';
 import Introduction from './introduction';
+import Hover from './hover';
 
 export default {
   Main,
@@ -24,4 +25,5 @@ export default {
   Animation2,
   PanGestureHandler1,
   Introduction,
+  Hover,
 };

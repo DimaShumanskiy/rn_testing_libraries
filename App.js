@@ -32,6 +32,7 @@ const App = () => {
             component={screen.PanGestureHandler1}
           />
           <Stack.Screen name="Introduction" component={screen.Introduction} />
+          <Stack.Screen name="Hover" component={screen.Hover} />
         </Stack.Navigator>
       </NavigationContainer>
     </PaperProvider>

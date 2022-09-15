@@ -13,6 +13,7 @@ const config = [
   'Animation2',
   'PanGestureHandler1',
   'Introduction',
+  'Hover',
 ];
 
 const Main = props => {
