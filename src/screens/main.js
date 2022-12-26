@@ -14,6 +14,7 @@ const config = [
   'PanGestureHandler1',
   'Introduction',
   'Hover',
+  'Home',
 ];
 
 const Main = props => {

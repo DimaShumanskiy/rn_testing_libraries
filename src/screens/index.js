@@ -11,6 +11,7 @@ import Animation2 from './animation-2';
 import PanGestureHandler1 from './pan-gesture-handler-1';
 import Introduction from './introduction';
 import Hover from './hover';
+import Home from './test';
 
 export default {
   Main,
@@ -26,4 +27,5 @@ export default {
   PanGestureHandler1,
   Introduction,
   Hover,
+  Home,
 };
