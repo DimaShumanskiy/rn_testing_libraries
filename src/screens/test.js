@@ -3,6 +3,7 @@ import {StyleSheet, Text, View, TouchableOpacity} from 'react-native';
 
 import {useSelector, useDispatch} from 'react-redux';
 import {increment, decrement} from '../store';
+import axios from 'axios';
 
 export default function Home() {
   const dispatch = useDispatch();
@@ -17,6 +18,15 @@ export default function Home() {
     dispatch(decrement());
   };
 
+  async function getUser() {
+    try {
+      const response = await axios.get('https://api.agify.io?name=meelad');
+      console.log(response);
+    } catch (error) {
+      console.error(error);
+    }
+  }
+
   return (
     <View style={styles.container}>
       <Text style={styles.title_text}>Counter App</Text>
@@ -30,6 +40,12 @@ export default function Home() {
         onPress={handleDecrement}
         style={{...styles.btn, backgroundColor: '#6e3b3b'}}>
         <Text style={styles.btn_text}> Decrement </Text>
+      </TouchableOpacity>
+
+      <TouchableOpacity
+        onPress={getUser}
+        style={{...styles.btn, backgroundColor: 'gold'}}>
+        <Text style={styles.btn_text}> Test API </Text>
       </TouchableOpacity>
     </View>
   );
