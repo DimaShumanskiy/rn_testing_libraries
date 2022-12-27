@@ -33,6 +33,10 @@ export const CountReducer = (state = initialState, action) => {
   }
 };
 
+export const testCombineReducers = {
+  count: CountReducer,
+};
+
 const rootReducer = combineReducers({
   count: CountReducer,
 });
